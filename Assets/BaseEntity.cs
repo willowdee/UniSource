@@ -29,7 +29,7 @@ public class BaseEntity : MonoBehaviour
         }
         if (entityHealth == 0)
         {
-            entityHealth = 100;
+            entityHealth = 1;
             isAlive = true;
         }
     }

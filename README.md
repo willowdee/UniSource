@@ -9,4 +9,4 @@ This project aims to be a 1:1 Source Engine recreation in Unity.
 This project and most of it's code was written by Github Copilot! Even this document.
 # Support
 While in active development, it's still heavily lacking in features. If you have any suggestions, please let me know!
-Also, you can support me on [Patreon](https://www.patreon.com/UserPlace) if you want to help me out.
+Also, you can support me on [Patreon](http://www.blankwebsite.com/) if you want to help me out.
