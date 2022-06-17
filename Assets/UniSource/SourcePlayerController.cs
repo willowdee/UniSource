@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class PlayerController : MonoBehaviour
+public class SourcePlayerController : MonoBehaviour
 {
     CapsuleCollider collider;
 	Transform cameraTransform;
