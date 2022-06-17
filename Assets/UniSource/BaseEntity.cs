@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BaseEntity : MonoBehaviour
 {
+    
     public string entityName;
     public int entityID;
     public int entityHealth;
     public bool isAlive;
+    public bool removeAfterDeath;
+    public float afterDeathRemoveDelay;
+    public EntityType entityType;
 
     public virtual void TakeDamage(int damage)
     {
@@ -33,6 +36,17 @@ public class BaseEntity : MonoBehaviour
             isAlive = true;
         }
     }
+    void Update()
+    {
+        if (entityHealth <= 0)
+        {
+            isAlive = false;
+            if(removeAfterDeath)
+            {
+                Destroy(gameObject, afterDeathRemoveDelay);
+            }
+        }
+    }
 
     public enum EntityType
     {
@@ -43,9 +57,19 @@ public class BaseEntity : MonoBehaviour
         Other
     }
 
-    public static Mesh GetModel(BaseEntity entity)
+    public Mesh GetModel(BaseEntity entity)
     {
-        return entity.GetComponent<MeshFilter>().mesh;
+        return GetComponent<MeshFilter>().mesh;
     }
+
+    public enum RenderMode
+    {
+        Normal,
+        Transparent,
+        Glow,
+        WorldSpaceGlow
+    }
+
+    
 
 }
